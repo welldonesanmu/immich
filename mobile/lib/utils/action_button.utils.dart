@@ -23,6 +23,7 @@ import 'package:immich_mobile/presentation/actions/share.action.dart';
 import 'package:immich_mobile/presentation/actions/share_link.action.dart';
 import 'package:immich_mobile/presentation/actions/similar_photos.action.dart';
 import 'package:immich_mobile/presentation/actions/slideshow.action.dart';
+import 'package:immich_mobile/presentation/actions/style_transform.action.dart';
 import 'package:immich_mobile/presentation/actions/stack.action.dart';
 import 'package:immich_mobile/presentation/actions/upload.action.dart';
 import 'package:immich_mobile/presentation/widgets/action_buttons/base_action_button.widget.dart';
@@ -66,6 +67,7 @@ enum ActionButtonType {
   setAlbumCover,
   similarPhotos,
   setProfilePicture,
+  styleTransform,
   viewInTimeline,
   slideshow,
   download,
@@ -149,6 +151,11 @@ enum ActionButtonType {
         !context.isInLockedView && //
             context.asset is RemoteAsset && //
             context.isOwner,
+      ActionButtonType.styleTransform =>
+        !context.isInLockedView && //
+            context.asset is RemoteAsset && //
+            context.asset.isImage && //
+            context.isOwner,
       ActionButtonType.openInfo => true,
       ActionButtonType.viewInTimeline =>
         context.timelineOrigin != TimelineOrigin.main &&
@@ -200,6 +207,7 @@ enum ActionButtonType {
         action: SimilarPhotosAction(assetId: (context.asset as RemoteAsset).id),
       ),
       ActionButtonType.setProfilePicture => ActionMenuItem(action: SetProfilePictureAction(asset: context.asset)),
+      ActionButtonType.styleTransform => ActionMenuItem(action: StyleTransformAction(source: context.source)),
       ActionButtonType.openInfo => BaseActionButton(
         label: StaticTranslations.instance.info,
         iconData: Icons.info_outline,
