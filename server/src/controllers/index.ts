@@ -21,6 +21,7 @@ import { LibraryController } from 'src/controllers/library.controller.js';
 import { MaintenanceController } from 'src/controllers/maintenance.controller.js';
 import { MapController } from 'src/controllers/map.controller.js';
 import { MemoryController } from 'src/controllers/memory.controller.js';
+import { MemoryDockController } from 'src/controllers/memorydock.controller.js';
 import { NotificationAdminController } from 'src/controllers/notification-admin.controller.js';
 import { NotificationController } from 'src/controllers/notification.controller.js';
 import { OAuthController } from 'src/controllers/oauth.controller.js';
@@ -69,6 +70,7 @@ export const controllers = [
   MaintenanceController,
   MapController,
   MemoryController,
+  MemoryDockController,
   NotificationController,
   NotificationAdminController,
   OAuthController,
