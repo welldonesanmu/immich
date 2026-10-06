@@ -474,6 +474,7 @@
 				781AD8BC2B33823900A9FFBB /* XCLocalSwiftPackageReference "FlutterGeneratedPluginSwiftPackage" */,
 				FEE084F62EC172460045228E /* XCRemoteSwiftPackageReference "sqlite-data" */,
 				FEE084F92EC1725A0045228E /* XCRemoteSwiftPackageReference "swift-http-structured-headers" */,
+				FEE084FE2EC1725A0045228E /* XCRemoteSwiftPackageReference "swift-structured-queries" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 97C146EF1CF9000F007C117D /* Products */;
@@ -1257,8 +1258,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/sqlite-data";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.6.1;
+				kind = exactVersion;
+				version = 1.8.0;
 			};
 		};
 		FEE084F92EC1725A0045228E /* XCRemoteSwiftPackageReference "swift-http-structured-headers" */ = {
@@ -1267,6 +1268,14 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.6.0;
+			};
+		};
+		FEE084FE2EC1725A0045228E /* XCRemoteSwiftPackageReference "swift-structured-queries" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-structured-queries";
+			requirement = {
+				kind = exactVersion;
+				version = 0.34.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
